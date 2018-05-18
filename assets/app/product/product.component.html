@@ -1,0 +1,17 @@
+<app-header></app-header>
+<div class="row">
+    <div class="col-sm-6 col-md-4" *ngFor="let product of products"> 
+        <div class="thumbnail">
+            <img [src]="product.imagepath" alt="..." class="img-responsive" style="max-width:250px">
+            <div class="caption">
+                <h3>{{product.productName}}</h3>
+                <p class="description">The Apple iPhone 7 boasts of a 4.7-inch IPS LCD (750 x 1,334 pixels) multi-touch display with 3D Touch Touchscreen. The display has a pixel density of 326ppi and offers superior brightness and a wide range of colour gamut along with great viewing angles</p>
+                <div class="clearfix">
+                    <div class="price pull-left"><strong>Rs.{{product.productPrice}}</strong></div>
+                   <!-- // <a class="btn btn-success pull-right" role="button" (click)=toCart(product)>Add to Shopping List</a> -->
+                    <button  class="btn btn-success pull-right" *ngIf="product.button" (click)=onAdd(product) >Add to Shopping List</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
